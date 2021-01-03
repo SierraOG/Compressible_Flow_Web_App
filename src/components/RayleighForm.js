@@ -32,10 +32,10 @@ export default function RayleighForm() {
     'totostar': '', 
     'popostar': '', 
     'ppstar': '', 
-    'rhorhostar': '', 
+    // 'rhorhostar': '', 
     'ttstar': '', 
     'uustar': '', 
-    'sstarr': '',
+    'sstarsr': '',
 });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -52,7 +52,7 @@ export default function RayleighForm() {
     axios.defaults.headers.post['Content-Type'] ='application/json';
 
     axios
-      .get(`https://cors-anywhere.herokuapp.com/https://compflow.herokuapp.com/isentropic/${values.gamma}/${values.inputType}/${values.inputValue}`)
+      .get(`https://cors-anywhere.herokuapp.com/https://compflow.herokuapp.com/rayleigh/${values.gamma}/${values.inputType}/${values.inputValue}`)
       .then(res => {
         setData(res.data)
         setReqErr('')
